@@ -1,0 +1,30 @@
+set $main DP-3
+set $secondary HDMI-A-1
+
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+
+set $ws01 "01"
+set $ws02 "02"
+set $ws03 "04"
+set $ws04 "04"
+set $ws05 "05"
+set $ws06 "06"
+
+$ws1 output $main
+$ws2 output $main
+$ws3 output $main
+$ws4 output $main
+$ws5 output $main
+$ws6 output $main
+
+$ws01 output $secondary
+$ws02 output $secondary
+$ws03 output $secondary
+$ws04 output $secondary
+$ws05 output $secondary
+$ws06 output $secondary

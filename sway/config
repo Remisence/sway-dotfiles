@@ -1,0 +1,264 @@
+#### Outputs ####
+
+output DP-3 pos 0 0 mode 1920x1080@180Hz
+output HDMI-A-1 pos 1920 0 mode 1920x1080@100Hz
+
+#### Variables ####
+set $main DP-3
+set $secondary HDMI-A-1
+
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+
+set $ws01 "01"
+set $ws02 "02"
+set $ws03 "03"
+set $ws04 "04"
+set $ws05 "05"
+set $ws06 "06"
+
+workspace $ws1 output $main
+workspace $ws2 output $main
+workspace $ws3 output $main
+workspace $ws4 output $main
+workspace $ws5 output $main
+workspace $ws6 output $main
+
+workspace $ws01 output $secondary
+workspace $ws02 output $secondary
+workspace $ws03 output $secondary
+workspace $ws04 output $secondary
+workspace $ws05 output $secondary
+workspace $ws06 output $secondary
+
+ # Logo key. Use Mod1 for Alt
+ set $mod Mod4
+
+ # Home row keys
+ set $left j
+ set $down k
+ set $up i
+ set $right l
+
+ # Terminal
+ set $term alacritty
+
+ # Rofi
+ set $menu ~/.config/rofi/launcher/launcher.sh
+
+######################################################
+
+#### Key bindings ####
+
+ # Start a terminal
+ bindsym $mod+q exec $term
+
+ # Kill focused window
+ bindsym $mod+w kill
+
+ # Start your launcher
+ bindsym $mod+space exec $menu
+
+ # Drag floating windows by holding down $mod and left mouse button.
+ # Resize them with right mouse button + $mod.
+ # Mouse button for dragging.
+ floating_modifier $mod normal
+
+ # Reload the configuration file
+ bindsym $mod+shift+r reload
+
+ # Exit sway (logs you out of your Wayland session)
+ bindsym $mod+Shift+Escape exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+
+ # Navigation
+
+  # Move focus with home row keys
+  bindsym $mod+$left focus left
+  bindsym $mod+$down focus down
+  bindsym $mod+$up focus up
+  bindsym $mod+$right focus right
+
+  # Or with arrow keys
+  bindsym $mod+Left focus left
+  bindsym $mod+Down focus down
+  bindsym $mod+Up focus up
+  bindsym $mod+Right focus right
+
+  # Use shift to move windows 
+  bindsym $mod+Shift+$left move left
+  bindsym $mod+Shift+$down move down
+  bindsym $mod+Shift+$up move up
+  bindsym $mod+Shift+$right move right
+
+  # Same with arrow keys
+  bindsym $mod+Shift+Left move left
+  bindsym $mod+Shift+Down move down
+  bindsym $mod+Shift+Up move up
+  bindsym $mod+Shift+Right move right
+
+ # Workspaces:
+   
+  # Switch to workspace
+  bindsym $mod+1 workspace $ws1
+  bindsym $mod+2 workspace $ws2
+  bindsym $mod+3 workspace $ws3
+  bindsym $mod+4 workspace $ws4
+  bindsym $mod+5 workspace $ws5
+  bindsym $mod+6 workspace $ws6
+  
+  bindsym alt+1 workspace $ws01
+  bindsym alt+2 workspace $ws02
+  bindsym alt+3 workspace $ws03
+  bindsym alt+4 workspace $ws04
+  bindsym alt+5 workspace $ws05
+  bindsym alt+6 workspace $ws06
+
+  # bindsym $mod+8 workspace number 8
+  # bindsym $mod+9 workspace number 9
+  # bindsym $mod+0 workspace number 10
+
+  # Move focused container to workspace
+  bindsym $mod+Shift+1 move container to workspace $ws1
+  bindsym $mod+Shift+2 move container to workspace $ws2
+  bindsym $mod+Shift+3 move container to workspace $ws3
+  bindsym $mod+Shift+4 move container to workspace $ws4
+  bindsym $mod+Shift+5 move container to workspace $ws5
+  bindsym $mod+Shift+6 move container to workspace $ws6
+
+  bindsym alt+Shift+1 move container to workspace $ws01
+  bindsym alt+Shift+2 move container to workspace $ws02
+  bindsym alt+Shift+3 move container to workspace $ws03
+  bindsym alt+Shift+4 move container to workspace $ws04
+  bindsym alt+Shift+5 move container to workspace $ws05
+  bindsym alt+Shift+6 move container to workspace $ws06
+
+ # Layout stuff:
+
+  # Split current object of focus vertically and horizontally
+  bindsym $mod+b splith
+  bindsym $mod+v splitv
+
+  # Switch the current container between different layout styles
+  # (mod + t) = stacking
+  # (mod + tab) = tabbed
+  # (mod + shift + s) = split toggle
+  bindsym $mod+t layout stacking
+  bindsym $mod+tab layout tabbed
+  bindsym $mod+shift+s layout toggle split
+
+  # Fullscreen focused window
+  bindsym $mod+f fullscreen
+
+  # Toggle focused window between floating and tiled
+  bindsym $mod+s floating toggle
+
+  # Swap focus between the tiling area and the floating area
+  bindsym $mod+g focus mode_toggle
+
+  # Move focus to the parent container
+  bindsym $mod+a focus parent
+
+ # Scratchpad
+
+  # Move the currently focused window to the scratchpad
+  bindsym $mod+Shift+minus move scratchpad
+
+  # Show the next scratchpad window or hide the focused scratchpad window.
+  # If there are multiple scratchpad windows, this command cycles through them.
+  bindsym $mod+minus scratchpad show
+
+ # Resizing containers
+
+  # Resize (win + ctrl + j,k,i,l) for left, down, up, and right respectively
+  bindsym $mod+ctrl+$left resize shrink width 10px
+  bindsym $mod+ctrl+$down resize grow height 10px
+  bindsym $mod+ctrl+$up resize shrink height 10px
+  bindsym $mod+ctrl+$right resize grow width 10px
+
+  # Same but with arrow keys
+  bindsym $mod+ctrl+Left resize shrink width 10px
+  bindsym $mod+ctrl+Down resize grow height 10px
+  bindsym $mod+ctrl+Up resize shrink height 10px
+  bindsym $mod+ctrl+Right resize grow width 10px
+
+######################################################
+
+
+ # Utilities:
+
+  # Special keys to adjust volume via PulseAudio
+  bindsym --locked XF86AudioMute exec pactl set-sink-mute \@DEFAULT_SINK@ toggle
+  bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume \@DEFAULT_SINK@ -5%
+  bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume \@DEFAULT_SINK@ +5%
+  bindsym --locked XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle
+  
+  # Special key to take a screenshot with grim
+  bindsym Print exec grim -g "$(slurp -c ff0000ff -b 00000085)" - | wl-copy
+
+  # Set split selection to none
+  bindsym $mod+n split none
+
+#### setting up bulgarian and english kblayouts ####
+
+input * {
+     xkb_layout us,bg
+     xkb_variant ,phonetic
+     xkb_options grp:alt_space_toggle
+}
+
+######################################################
+
+#### removing acceleration ####
+
+input 2385:5854:Kingston_HyperX_Pulsefire_Core {
+    accel_profile "flat" # disable mouse acceleration (enabled by default; to set it manually, use "adaptive" instead of "flat")
+    pointer_accel 0 # set mouse sensitivity (between -1 and 1)
+}
+
+######################################################
+
+#### autoruns ####
+bar {
+	swaybar_command waybar
+}
+exec nm-applet
+exec lxqt-policykit-agent
+
+######################################################
+
+#### window rules (like bspwm) ####
+
+assign [class="discord"] 2
+assign [class="steam"] 3
+
+for_window [app_id="lxqt-policykit-agent"] floating enable
+for_window [app_id="nemo"] floating enable
+for_window [app_id="nm-connection-editor"] floating enable
+
+######################################################
+
+#### Visual ####
+
+ font "FiraCode Regular Medium Bold" 11
+ titlebar_border_thickness 2
+ titlebar_padding 10 5
+
+ gaps inner 2
+ gaps outer 2
+
+ default_border pixel 2
+ corner_radius 5
+
+ # Colors
+ client.focused					#e60000 #732F22 #FFFFFF #27D3F5 #e60000
+ client.focused_inactive		#000001 #3B3B3B #999999 #3B3B3B
+ client.unfocused			    #000001 #3B3B3B #999999 #3B3B3B
+
+######################################################
+
+focus_wrapping no
+

@@ -1,0 +1,112 @@
+/**
+ *
+ **/
+
+@import "colors.rasi"
+@import "fonts.rasi"
+
+/*****----- Configuration -----*****/
+configuration {
+	modi:                       "drun";
+    show-icons:                 true;
+	disable-history:				true;
+	no-levenshtein-sor:				true;
+	me-accept-entry: 			  "!MousePrimary";
+}
+
+* {
+ 
+  background-color : transparent;
+  text-color       : @foreground;
+
+  margin  : 0;
+  padding : 0;
+  spacing : 0;
+}
+
+element-icon, element-text, scrollbar {
+  cursor: pointer;
+}
+
+window {
+  location : northwest;
+  width    : 300px;
+  x-offset : 0px;
+  y-offset : 30px;
+
+  background-color: @background;
+  border: 1px;
+  border-color: @background;
+  border-radius: 6px;
+}
+
+inputbar {
+  spacing  : 8px;
+  padding  : 4px 8px;
+  children : [ icon-search, entry ];
+
+  background-color: @background;
+}
+
+icon-search {
+  expand   : false;
+  filename : "search-symbolic";
+  size     : 14px;
+}
+
+textbox {
+  padding          : 4px 8px;
+  background-color : @background;
+}
+
+listview {
+  padding      : 4px 0px;
+  lines        : 12;
+  columns      : 1;
+  scrollbar    : true;
+  fixed-height : false;
+  dynamic      : true;
+}
+
+element {
+  padding : 4px 8px;
+  spacing : 8px;
+}
+
+element normal urgent {
+  text-color: @urgent;
+}
+
+element normal active {
+  text-color: @selected;
+}
+
+element alternate active {
+  text-color: @active;
+}
+
+element selected {
+  text-color       : @foreground;
+  background-color : @background-alt;
+}
+
+element selected urgent {
+  background-color: @urgent;
+}
+
+element-icon {
+    background-color:            transparent;
+    text-color:                  inherit;
+    size:                        24px;
+    cursor:                      inherit;
+}
+
+element-text {
+  text-color: inherit;
+}
+
+scrollbar {
+  handle-width : 6px;
+  handle-color : @selected;
+  padding      : 2px 2px;
+}

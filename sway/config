@@ -1,3 +1,6 @@
+#include /etc/sway/config.d/*
+#exec /usr/lib/xdg-desktop-portal-wlr -r
+
 #### Outputs ####
 
 output DP-3 pos 0 0 mode 1920x1080@180Hz
@@ -57,6 +60,9 @@ workspace $ws06 output $secondary
  # Start a terminal
  bindsym $mod+q exec $term
 
+ # Start a terminal in floatin mode
+ bindsym $mod+shift+q exec $term --class=floating-terminal 
+ 
  # Kill focused window
  bindsym $mod+w kill
 
@@ -232,12 +238,14 @@ exec lxqt-policykit-agent
 
 #### window rules (like bspwm) ####
 
-assign [class="discord"] 2
+assign [class="discord"] 01
 assign [class="steam"] 3
 
 for_window [app_id="lxqt-policykit-agent"] floating enable
 for_window [app_id="nemo"] floating enable
 for_window [app_id="nm-connection-editor"] floating enable
+for_window [title="Picture-in-Picture"] floating enable
+for_window [app_id="floating-terminal"] floating enable
 
 ######################################################
 

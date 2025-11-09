@@ -10,7 +10,7 @@
     // "position": "bottom", // Waybar position (top|bottom|left|right)
 	// "width": 
 	"output": ["DP-3"],
-    "height": 30, // (Deafult: 30)
+    "height": 25, // (Deafult: 30)
     "spacing": 0, // (Default: 4)
 	    
     "modules-left": [
@@ -52,12 +52,22 @@
 			"6": ["DP-3"],
         },
 	},
+	
+	"sway/language": {
+    "format": "<span font-family='Symbols Nerd Font' rise='1500'></span> {}",
+		"on-click": "swaymsg input type:keyboard xkb_switch_layout next",
+	},
+
 
 
     "keyboard-state": {
-        "numlock": true,
-        "capslock": true,
-        "format": "{name} {icon}",
+		"numlock": true,
+		"capslock": true,
+		"format": "{name} {icon}",
+		"format-icons": {
+			"locked": "",
+			"unlocked": ""
+		}
     },
     
     "sway/mode": {
@@ -74,35 +84,29 @@
     
     "tray": {
         // "icon-size": 21,
-        "spacing": 10,
+        "spacing": 8,
         // "icons": {
-        //   "blueman": "bluetooth",
-        //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
         // }
     },
     
     "clock": {
         // "timezone": "America/New_York",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+		"format": "<span font-family='Symbols Nerd Font' rise='1800'></span> {:%H:%M}",
+        "format-alt": "<span font-family='Symbols Nerd Font' rise='1800'></span> {:%d/%m/%Y}",
     },
     
     "cpu": {
-        "format": "{usage}% ",
-        "tooltip": false
+        "format": "<span font-family='Symbols Nerd Font' rise='1000'></span> {usage}%",
+        "tooltip": false,
+		"on-click": "alacritty -e btop",
+
     },
     
     "memory": {
-        "format": "{}% "
-    },
-    
-    "temperature": {
-        // "thermal-zone": 2,
-        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-        "critical-threshold": 80,
-        // "format-critical": "{temperatureC}°C {icon}",
-        "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""]
+        "format": "<span font-family='Symbols Nerd Font' rise='1000'></span> {used}/{total} GB",
+        "tooltip-format": "{percentage}%",
+        "on-click": "alacritty -e btop",
     },
        
 //    "network": {
@@ -117,17 +121,16 @@
     
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
+        "format": "{icon} {volume}%",
+        "format-muted": "<span font-family='Symbols Nerd Font' rise='800'> </span>",
         "format-icons": {
-            "default": ["", "", ""]
+			"default": [
+				"<span font-family='Symbols Nerd Font' rise='1000'></span>", 
+				"<span font-family='Symbols Nerd Font' rise='1000'></span>", 
+				"<span font-family='Symbols Nerd Font' rise='1000'></span>"
+            ]
         },
         "on-click": "pavucontrol"
     },
-
     }
 }

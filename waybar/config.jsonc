@@ -1,17 +1,17 @@
 // -*- mode: jsonc -*-
 {
 
-
-////////////// 
-// Modules //
-////////////
-
 	// "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)
 	// "width": 
 	"output": ["DP-3"],
-    "height": 25, // (Deafult: 30)
+    "height": 28, // (Deafult: 30)
     "spacing": 0, // (Default: 4)
+
+
+////////////// 
+// Modules //
+////////////
 	    
     "modules-left": [
         "sway/workspaces",
@@ -23,50 +23,33 @@
         "sway/window"
     ],
     "modules-right": [
-        "tray",
+        "group/traydrawer",
+		"group/sysmon",
+		"custom/notification",
         "pulseaudio",
-        "cpu",
-        "memory",
         "sway/language",
-        "custom/notification",
         "clock",
 
         
     ],
-
-
     
-//////////////////////////// 
-// Modules Configuration //
-//////////////////////////
+///////////////////////////////// 
+// Base Modules Configuration //
+///////////////////////////////
 
-	"sway/window": {
-	"format": "{app_id}",
-	"max-length": 50,
-	},
+	"temperature#cpu": {
+		"hwmon-path": [
+			"/sys/class/hwmon/hwmon2/temp1_input"
+			],
+		"format": "<span font-family='Symbols Nerd Font' rise='500' font='15px'></span> CPU: {temperatureC}°C"
+},
 
-
-  "custom/notification": {
-    "tooltip": true,
-    "format": "<span size='16pt'>{icon}</span>",
-    "format-icons": {
-      "notification": "󱅫",
-      "none": "󰂜",
-      "dnd-notification": "󰂠",
-      "dnd-none": "󰪓",
-      "inhibited-notification": "󰂛",
-      "inhibited-none": "󰪑",
-      "dnd-inhibited-notification": "󰂛",
-      "dnd-inhibited-none": "󰪑"
-    },
-    "return-type": "json",
-    "exec-if": "which swaync-client",
-    "exec": "swaync-client -swb",
-    "on-click": "swaync-client -t -sw",
-    "on-click-right": "swaync-client -d -sw",
-    "escape": true
-  },
-
+	"temperature#gpu": {
+		"hwmon-path": [
+			"/sys/class/hwmon/hwmon1/temp2_input"
+			],
+		"format": "<span font-family='Symbols Nerd Font' rise='500' font='15px'></span> GPU: {temperatureC}°C"		
+},
 
 	"sway/workspaces": {
 		"all-outputs": false,
@@ -83,13 +66,30 @@
 			"6": ["DP-3"],
         },
 	},
-	
-	"sway/language": {
-    "format": "<span font-family='Symbols Nerd Font' rise='1500'></span> {}",
-		"on-click": "swaymsg input type:keyboard xkb_switch_layout next",
+
+	"sway/window": {
+		"format": "{app_id}",
+		"max-length": 50,
 	},
 
-
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{icon} {volume}%",
+        "format-muted": "<span font-family='Symbols Nerd Font' rise='200' font='16px'> </span>",
+        "format-icons": {
+			"default": [
+				"<span font-family='Symbols Nerd Font' rise='200' font='16px'></span>", 
+				"<span font-family='Symbols Nerd Font' rise='200' font='16px'></span>", 
+				"<span font-family='Symbols Nerd Font' rise='200' font='16px'></span>"
+            ]
+        },
+        "on-click": "pavucontrol"
+    },
+    
+	"sway/language": {
+    "format": "<span font-family='Symbols Nerd Font' rise='600' font='16px'> </span>{}",
+		"on-click": "swaymsg input type:keyboard xkb_switch_layout next",
+	},
 
     "keyboard-state": {
 		"numlock": true,
@@ -123,8 +123,8 @@
     "clock": {
         // "timezone": "America/New_York",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-		"format": "<span font-family='Symbols Nerd Font' rise='1800'></span> {:%H:%M}",
-        "format-alt": "<span font-family='Symbols Nerd Font' rise='1800'></span> {:%d/%m/%Y}",
+		"format": "<span font-family='Symbols Nerd Font' font='17px' rise='1000'></span> {:%H:%M}",
+        "format-alt": "<span font-family='Symbols Nerd Font' font='17px' rise='100'></span> {:%d/%m/%Y}",
     },
     
     "cpu": {
@@ -136,10 +136,10 @@
     
     "memory": {
         "format": "<span font-family='Symbols Nerd Font' rise='1000'></span> {used}/{total} GB",
-        "tooltip-format": "{percentage}%",
+        "tooltip": false,
         "on-click": "alacritty -e btop",
     },
-       
+    
 //    "network": {
 //        // "interface": "wlp2*", // (Optional) To force the use of this interface
 //        "format-wifi": "{essid} ({signalStrength}%) ",
@@ -149,19 +149,61 @@
 //        "format-disconnected": "Disconnected ⚠",
 //        "format-alt": "{ifname}: {ipaddr}/{cidr}"
 //    },
-    
-    "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{icon} {volume}%",
-        "format-muted": "<span font-family='Symbols Nerd Font' rise='800'> </span>",
-        "format-icons": {
-			"default": [
-				"<span font-family='Symbols Nerd Font' rise='1000'></span>", 
-				"<span font-family='Symbols Nerd Font' rise='1000'></span>", 
-				"<span font-family='Symbols Nerd Font' rise='1000'></span>"
-            ]
-        },
-        "on-click": "pavucontrol"
+
+
+/////////////////////////////////// 
+// Custom Modules Configuration //
+/////////////////////////////////
+
+  "custom/notification": {
+    "tooltip": true,
+    "format": "<span size='16pt' rise='5500'>{icon}</span>",
+    "format-icons": {
+      "notification": "󱅫",
+      "none": "󰂜",
+      "dnd-notification": "󰂠",
+      "dnd-none": "󰪓",
+      "inhibited-notification": "󰂛",
+      "inhibited-none": "󰪑",
+      "dnd-inhibited-notification": "󰂛",
+      "dnd-inhibited-none": "󰪑"
     },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  },
+
+    "group/traydrawer": {
+		"orientation": "horizontal",
+		"drawer": {
+			"transition-left-to-right": false,
+			"click-to-reveal": true,
+		},
+		"modules": ["custom/traydrawer-wrap", "tray"]
+	},
+
+	"custom/traydrawer-wrap": {
+        "format": "<span font-family='Symbols Nerd Font' font='20px' rise='5000'> 󰅮 </span>",
+		"tooltip-format": "Tray"
+	}, 
+	
+    "group/sysmon": {
+		"orientation": "horizontal",
+		"drawer": {
+			"transition-left-to-right": false,
+			"click-to-reveal": true,
+		},
+		"modules": ["custom/sysmon-wrap", "cpu", "memory", "temperature#cpu",
+		"temperature#gpu"]
+	},
+
+	"custom/sysmon-wrap": {
+        "format": "<span font-family='Symbols Nerd Font' font='20px' rise='5000'>  </span>",
+		"tooltip-format": "System Monitor"
+	}, 
+	
     }
 }

@@ -2,6 +2,7 @@
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: 'Symbols Nerd Font', 'JetBrainsMono', 'JetBrains Mono', 'FontAwesome', 'feather', 'Iosevka Nerd Font', 'FiraCode';
     font-size: 14px;
+    padding: 0 0px;
 }
 
 button,
@@ -15,6 +16,8 @@ button:hover {
 #memory,
 #disk,
 #temperature,
+#temperature.cpu,
+#temperature.gpu,
 #backlight,
 #pulseaudio,
 #tray,
@@ -81,16 +84,6 @@ window#waybar.hidden {
 #custom-notification {
 }
 
-/* If workspaces is the leftmost module, omit left margin */
-.modules-left > widget:first-child > #workspaces {
-    margin-left: 0;
-}
-
-/* If workspaces is the rightmost module, omit right margin */
-.modules-right > widget:last-child > #workspaces {
-    margin-right: 0;
-}
-
 #clock {
     background-color: inherit;
 }
@@ -108,16 +101,12 @@ label:focus {
 
 #cpu {
     background-color: inherit;
-    color: #ffffff;
 }
 
 #memory {
     background-color: inherit;
 }
 
-#disk {
-    background-color: #964B00;
-}
 
 #pulseaudio {
     background-color: inherit;
@@ -150,3 +139,8 @@ label:focus {
 }
 
 
+#custom-traydrawer-wrap {
+}
+
+#custom-sysmon-wrap {
+}

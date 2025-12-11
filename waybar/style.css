@@ -1,61 +1,13 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: 'Symbols Nerd Font', 'JetBrainsMono', 'JetBrains Mono', 'FontAwesome', 'feather', 'Iosevka Nerd Font', 'FiraCode';
-    font-size: 15px;
+    font-size: 14px;
 }
 
-window#waybar {
-    background-color: rgba(43, 48, 59, 0.5);
-    color: #ffffff;
-    transition-property: background-color;
-    transition-duration: .5s;
-}
-
-window#waybar.hidden {
-    opacity: 0.2;
-}
-
-button {
-    /* Use box-shadow instead of border so the text isn't offset */
-    box-shadow: inset 0 -3px transparent;
-    /* Avoid rounded borders under each button name */
-    border: none;
-    border-radius: 20;
-}
-
-/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+button,
 button:hover {
-    background: inherit;
-    box-shadow: inset 0 -3px #ffffff;
-}
-
-/* you can set a style on hover for any module like this */
-#pulseaudio:hover {
-    background-color: #a37800;
-}
-
-#workspaces button {
-    padding: 0 2px;
-    background-color: transparent;
-    color: #ffffff;
-}
-
-#workspaces button:hover {
-    background: rgba(0, 0, 0, 0.2);
-}
-
-#workspaces button.focused {
-    background-color: #64727D;
-    box-shadow: inset 0 -3px #ffffff;
-}
-
-#workspaces button.urgent {
-    background-color: inherit;
-}
-
-#mode {
-    background-color: #64727D;
-    box-shadow: inset 0 -3px #ffffff;
+	border-radius: 0px;
+	border: none;
 }
 
 #clock,
@@ -68,10 +20,65 @@ button:hover {
 #tray,
 #mode,
 #scratchpad,
-
 #window,
 #workspaces {
     margin: 0 4px;
+}
+
+/*---------------------- WORKSPACES MODULE ----------------*/
+
+#workspaces button {
+	color: #A3A2A2;
+    padding: 0 4px;
+   	box-shadow: inset 0 -2px #747475;
+}
+
+#workspaces button.empty {
+    color: #545454;
+	background: rgba(0, 0, 0, 1);
+	box-shadow: none;
+}
+
+#workspaces button:hover {
+	color: #ffffff;
+    background: #343845;
+    
+}
+
+#workspaces button.focused,
+#workspaces button.visible:not(.focused) {
+    background-color: #64727D;
+    box-shadow: inset 0 -2px #ffffff;
+	color: #ffffff;
+}
+
+/*--------------- END OF WORKSPACES MODULE ----------------*/
+
+
+
+window#waybar {
+    background-color: rgba(43, 48, 59, 0.5);
+    color: #ffffff;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+
+/* you can set a style on hover for any module like this */
+#pulseaudio:hover {
+    background-color: #a37800;
+}
+
+#mode {
+    background-color: #64727D;
+    box-shadow: inset 0 -3px #ffffff;
+}
+
+#custom-notification {
 }
 
 /* If workspaces is the leftmost module, omit left margin */

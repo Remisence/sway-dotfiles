@@ -1,5 +1,9 @@
-#include /etc/sway/config.d/*
+include /etc/sway/config.d/*
+
 #exec /usr/lib/xdg-desktop-portal-wlr -r
+
+
+
 
 #### Outputs ####
 
@@ -201,6 +205,9 @@ workspace $ws06 output $secondary
   bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume \@DEFAULT_SINK@ -5%
   bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume \@DEFAULT_SINK@ +5%
   bindsym --locked XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle
+  bindsym --locked XF86AudioPlay exec playerctl play-pause
+  bindsym --locked XF86AudioPrev exec playerctl previous  
+  bindsym --locked XF86AudioNext exec playerctl next 
   
   # Special key to take a screenshot with grim
   bindsym Print exec grim -g "$(slurp -c ff0000ff -b 00000085)" - | wl-copy
@@ -233,6 +240,7 @@ bar {
 }
 exec nm-applet
 exec lxqt-policykit-agent
+exec swaync
 
 ######################################################
 

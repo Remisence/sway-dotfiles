@@ -41,14 +41,16 @@
 		"hwmon-path": [
 			"/sys/class/hwmon/hwmon2/temp1_input"
 			],
-		"format": "<span font-family='Symbols Nerd Font' rise='500' font='15px'></span> CPU: {temperatureC}°C"
+		"format": "<span font-family='Symbols Nerd Font' rise='0' font='16px'></span> CPU: {temperatureC}°C",
+		"on-click": "alacritty -e 'btop",
 },
 
 	"temperature#gpu": {
 		"hwmon-path": [
 			"/sys/class/hwmon/hwmon1/temp2_input"
 			],
-		"format": "<span font-family='Symbols Nerd Font' rise='500' font='15px'></span> GPU: {temperatureC}°C"		
+		"format": "<span font-family='Symbols Nerd Font' rise='0' font='16px'></span> GPU: {temperatureC}°C",
+		"on-click": "alacritty -e btop",
 },
 
 	"sway/workspaces": {
@@ -75,19 +77,19 @@
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         "format": "{icon} {volume}%",
-        "format-muted": "<span font-family='Symbols Nerd Font' rise='200' font='16px'> </span>",
+        "format-muted": "<span font-family='Symbols Nerd Font' rise='0' font='16px'> </span>",
         "format-icons": {
 			"default": [
-				"<span font-family='Symbols Nerd Font' rise='200' font='16px'></span>", 
-				"<span font-family='Symbols Nerd Font' rise='200' font='16px'></span>", 
-				"<span font-family='Symbols Nerd Font' rise='200' font='16px'></span>"
+				"<span font-family='Symbols Nerd Font' rise='0' font='16px'></span>", 
+				"<span font-family='Symbols Nerd Font' rise='0' font='16px'></span>", 
+				"<span font-family='Symbols Nerd Font' rise='0' font='16px'></span>"
             ]
         },
         "on-click": "pavucontrol"
     },
     
 	"sway/language": {
-    "format": "<span font-family='Symbols Nerd Font' rise='600' font='16px'> </span>{}",
+    "format": "<span font-family='Symbols Nerd Font' rise='0' font='16px'> </span>{}",
 		"on-click": "swaymsg input type:keyboard xkb_switch_layout next",
 	},
 
@@ -114,8 +116,8 @@
     },
     
     "tray": {
-        // "icon-size": 21,
-        "spacing": 8,
+        "icon-size": 15,
+        "spacing": 6,
         // "icons": {
         // }
     },
@@ -123,19 +125,18 @@
     "clock": {
         // "timezone": "America/New_York",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-		"format": "<span font-family='Symbols Nerd Font' font='17px' rise='1000'></span> {:%H:%M}",
-        "format-alt": "<span font-family='Symbols Nerd Font' font='17px' rise='100'></span> {:%d/%m/%Y}",
+		"format": "<span font-family='Symbols Nerd Font' font='17px' rise='0'></span> {:%H:%M}",
+        "format-alt": "<span font-family='Symbols Nerd Font' font='17px' rise='0'></span> {:%d/%m/%Y}",
     },
     
     "cpu": {
-        "format": "<span font-family='Symbols Nerd Font' rise='1000'></span> {usage}%",
+        "format": "<span font-family='Symbols Nerd Font' rise='0' font='16px'></span> {usage}%",
         "tooltip": false,
 		"on-click": "alacritty -e btop",
-
     },
     
     "memory": {
-        "format": "<span font-family='Symbols Nerd Font' rise='1000'></span> {used}/{total} GB",
+        "format": "<span font-family='Symbols Nerd Font' rise='0' font='16px'></span> {used}/{total} GB",
         "tooltip": false,
         "on-click": "alacritty -e btop",
     },
@@ -157,7 +158,7 @@
 
   "custom/notification": {
     "tooltip": true,
-    "format": "<span size='16pt' rise='5500'>{icon}</span>",
+    "format": "<span size='16pt' rise='0'>{icon}</span>",
     "format-icons": {
       "notification": "󱅫",
       "none": "󰂜",
@@ -186,7 +187,7 @@
 	},
 
 	"custom/traydrawer-wrap": {
-        "format": "<span font-family='Symbols Nerd Font' font='20px' rise='5000'> 󰅮 </span>",
+        "format": "<span font-family='Symbols Nerd Font' font='18px' rise='0'></span>",
 		"tooltip-format": "Tray"
 	}, 
 	
@@ -201,7 +202,7 @@
 	},
 
 	"custom/sysmon-wrap": {
-        "format": "<span font-family='Symbols Nerd Font' font='20px' rise='5000'>  </span>",
+        "format": "<span font-family='Symbols Nerd Font' font='18px' rise='0'></span>",
 		"tooltip-format": "System Monitor"
 	}, 
 	

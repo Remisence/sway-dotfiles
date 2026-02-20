@@ -35,6 +35,15 @@ button:hover {
 
 }
 
+#custom-power {
+	margin: 2px 2px 0px 2px;
+	padding: 0px 6px 0px 6px;
+	border-radius: 20%;
+    background-color: inherit;
+    color: #ffffff;
+}
+
+
 /*---------------------- WORKSPACES MODULE ----------------*/
 
 #workspaces button {
@@ -110,6 +119,13 @@ window#waybar.hidden {
 #custom-notification:hover {
     color: #F7CB4D;
 }
+
+#custom-power:hover{
+	color: #FFFFFF;
+	background-color: #B5250E;
+}
+
+
 
 #language:hover {
     color: #60BBFC;

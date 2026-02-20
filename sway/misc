@@ -1,0 +1,19 @@
+#### removing acceleration ####
+
+input 2385:5854:Kingston_HyperX_Pulsefire_Core {
+	accel_profile "flat" # disable mouse acceleration (enabled by default; to set it manually, use "adaptive" instead of "flat") pointer_accel 0 # set mouse sensitivity (between -1 and 1)
+}
+
+focus_wrapping no
+
+######################################################
+
+#### setting up bulgarian and english kblayouts ####
+
+input * {
+     xkb_layout us,bg
+     xkb_variant ,phonetic
+     xkb_options grp:alt_space_toggle
+}
+
+######################################################

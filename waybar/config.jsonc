@@ -28,6 +28,7 @@
         "pulseaudio",
         "sway/language",
         "clock",
+        "custom/power",
 
         
     ],
@@ -182,7 +183,11 @@
 	"custom/sysmon-wrap": {
         "format": "<span font-family='Symbols Nerd Font' font='18px' rise='0'></span>",
 		"tooltip-format": "System Monitor"
-	}, 
-	
-    }
+	},
+
+	"custom/power":{ 
+		"tooltip": false,
+		"format":"<span font-family='Symbols Nerd Font' font='18px' rise='0'></span>", 
+		"on-click":"swaynag -t warning -m 'Power Menu Options' -b 'Logout' 'swaymsg exit' -b 'Suspend' 'swaymsg exec systemctl suspend' -b 'shutdown' 'systemctl shutdown'" }, 
+    },
 }

@@ -1,0 +1,165 @@
+#### Key bindings ####
+
+# Start a terminal
+bindsym $mod+q exec $term
+
+# Start a terminal in floatin mode
+bindsym $mod+shift+q exec $term --class=floating-terminal
+
+# Kill focused window
+bindsym $mod+w kill
+
+# Start your launcher
+bindsym $mod+space exec $menu
+
+# Drag floating windows by holding down $mod and left mouse button.
+# Resize them with right mouse button + $mod.
+# Mouse button for dragging.
+floating_modifier $mod normal
+
+# Reload the configuration file
+bindsym $mod+shift+r reload
+
+# Exit sway (logs you out of your Wayland session)
+bindsym $mod+Shift+Escape exec swaynag -t warning -m 'Do you really want to exit sway? This will end your Wayland session.' \
+        -b 'Shutdown' 'systemctl poweroff' \
+        -b 'Reboot' 'systemctl reboot' \
+        -b 'Logout' 'swaymsg exit' -e bottom
+
+#####################################################
+
+
+# Navigation
+
+# Move focus with home row keys
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+
+# Or with arrow keys
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Use shift to move windows
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+
+# Same with arrow keys
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+#########################
+
+# Workspaces:
+
+# Switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+
+bindsym alt+1 workspace $ws01
+bindsym alt+2 workspace $ws02
+bindsym alt+3 workspace $ws03
+bindsym alt+4 workspace $ws04
+bindsym alt+5 workspace $ws05
+bindsym alt+6 workspace $ws06
+
+# Move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+
+bindsym alt+Shift+1 move container to workspace $ws01
+bindsym alt+Shift+2 move container to workspace $ws02
+bindsym alt+Shift+3 move container to workspace $ws03
+bindsym alt+Shift+4 move container to workspace $ws04
+bindsym alt+Shift+5 move container to workspace $ws05
+bindsym alt+Shift+6 move container to workspace $ws06
+
+######################################
+
+
+# Layout stuff:
+
+# Split current object of focus vertically and horizontally
+bindsym $mod+b splith
+bindsym $mod+v splitv
+
+# Switch the current container between different layout styles
+# (mod + t) = stacking
+# (mod + tab) = tabbed
+# (mod + shift + s) = split toggle
+bindsym $mod+t layout stacking
+bindsym $mod+tab layout tabbed
+bindsym $mod+shift+s layout toggle split
+
+# Fullscreen focused window
+bindsym $mod+f fullscreen
+
+# Toggle focused window between floating and tiled
+bindsym $mod+s floating toggle
+
+# Swap focus between the tiling area and the floating area
+bindsym $mod+g focus mode_toggle
+
+# Move focus to the parent container
+bindsym $mod+a focus parent
+
+# Scratchpad
+
+# Move the currently focused window to the scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles them.
+bindsym $mod+minus scratchpad show
+
+###################################################################
+
+# Resizing containers
+
+# Resize (win + ctrl + j,k,i,l) for left, down, up, and right respectively
+bindsym $mod+ctrl+$left resize shrink width 10px
+bindsym $mod+ctrl+$down resize grow height 10px
+bindsym $mod+ctrl+$up resize shrink height 10px
+bindsym $mod+ctrl+$right resize grow width 10px
+
+# Same but with arrow keys
+bindsym $mod+ctrl+Left resize shrink width 10px
+bindsym $mod+ctrl+Down resize grow height 10px
+bindsym $mod+ctrl+Up resize shrink height 10px
+bindsym $mod+ctrl+Right resize grow width 10px
+
+######################################################
+
+# Utilities:
+
+# Special keys to adjust volume via PulseAudio
+bindsym --locked XF86AudioMute exec pactl set-sink-mute \@DEFAULT_SINK@ toggle
+bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume \@DEFAULT_SINK@ -5%
+bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume \@DEFAULT_SINK@ +5%
+bindsym --locked XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle
+
+bindsym --locked XF86AudioPlay exec playerctl play-pause
+bindsym --locked XF86AudioPrev exec playerctl previous
+bindsym --locked XF86AudioNext exec playerctl next
+
+# Special key to take a screenshot with grim
+bindsym Print exec grim -g "$(slurp -c ff0000ff -b 00000085)" - | wl-copy
+
+# Set split selection to none
+bindsym $mod+n split none
+

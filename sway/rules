@@ -1,0 +1,13 @@
+#### window rules (like bspwm) ####
+
+assign [class="discord"] 01
+assign [class="steam"] 3
+
+for_window [app_id="lxqt-policykit-agent"] floating enable
+for_window [app_id="nemo"] floating enable
+for_window [app_id="nm-connection-editor"] floating enable
+for_window [title="Picture-in-Picture"] floating enable
+for_window [app_id="floating-terminal"] floating enable
+for_window [app_id="org.keepassxc.KeePassXC"] floating enable
+
+######################################################

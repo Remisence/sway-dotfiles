@@ -1,0 +1,8 @@
+# Colors
+
+client.focused                 #e60000 #732F22 #FFFFFF #27D3F5 #e60000
+client.focused_inactive        #000001 #3B3B3B #999999 #3B3B3B
+client.unfocused               #000001 #3B3B3B #999999 #3B3B3B
+
+######################################################
+

@@ -1,0 +1,10 @@
+#### autoruns ####
+
+bar {
+     swaybar_command waybar
+}
+exec nm-applet
+exec lxqt-policykit-agent
+exec dunst
+
+######################################################

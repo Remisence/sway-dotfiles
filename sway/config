@@ -240,7 +240,7 @@ bar {
 }
 exec nm-applet
 exec lxqt-policykit-agent
-exec swaync
+exec dunst
 
 ######################################################
 
@@ -254,6 +254,7 @@ for_window [app_id="nemo"] floating enable
 for_window [app_id="nm-connection-editor"] floating enable
 for_window [title="Picture-in-Picture"] floating enable
 for_window [app_id="floating-terminal"] floating enable
+for_window [app_id="org.keepassxc.KeePassXC"] floating enable
 
 ######################################################
 
@@ -278,3 +279,4 @@ for_window [app_id="floating-terminal"] floating enable
 
 focus_wrapping no
 
+seat seat0 xcursor_theme capitaine-cursors-light-r3 18

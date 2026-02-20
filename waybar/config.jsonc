@@ -25,7 +25,6 @@
     "modules-right": [
         "group/traydrawer",
 		"group/sysmon",
-		"custom/notification",
         "pulseaudio",
         "sway/language",
         "clock",
@@ -42,7 +41,7 @@
 			"/sys/class/hwmon/hwmon2/temp1_input"
 			],
 		"format": "<span font-family='Symbols Nerd Font' rise='0' font='16px'></span> CPU: {temperatureC}°C",
-		"on-click": "alacritty -e 'btop",
+		"on-click": "alacritty -e btop",
 },
 
 	"temperature#gpu": {
@@ -155,27 +154,6 @@
 /////////////////////////////////// 
 // Custom Modules Configuration //
 /////////////////////////////////
-
-  "custom/notification": {
-    "tooltip": true,
-    "format": "<span size='16pt' rise='0'>{icon}</span>",
-    "format-icons": {
-      "notification": "󱅫",
-      "none": "󰂜",
-      "dnd-notification": "󰂠",
-      "dnd-none": "󰪓",
-      "inhibited-notification": "󰂛",
-      "inhibited-none": "󰪑",
-      "dnd-inhibited-notification": "󰂛",
-      "dnd-inhibited-none": "󰪑"
-    },
-    "return-type": "json",
-    "exec-if": "which swaync-client",
-    "exec": "swaync-client -swb",
-    "on-click": "swaync-client -t -sw",
-    "on-click-right": "swaync-client -d -sw",
-    "escape": true
-  },
 
     "group/traydrawer": {
 		"orientation": "horizontal",

@@ -1,17 +1,13 @@
 include /etc/sway/config.d/*
 include vars
 include autoruns
+include rules
+include binds
+include visual
 include colors
 include misc
-include rules
-include visual
-include binds
-
 
 #exec /usr/lib/xdg-desktop-portal-wlr -r
-
-
-
 
 #### Outputs ####
 

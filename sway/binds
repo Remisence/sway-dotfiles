@@ -3,7 +3,7 @@
 # Start a terminal
 bindsym $mod+q exec $term
 
-# Start a terminal in floatin mode
+# Start a terminal in floating mode
 bindsym $mod+shift+q exec $term --class=floating-terminal
 
 # Kill focused window

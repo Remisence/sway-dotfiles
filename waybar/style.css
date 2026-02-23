@@ -1,4 +1,5 @@
-* {
+* 
+{
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: 'Symbols Nerd Font', 'JetBrainsMono', 'JetBrains Mono', 'FontAwesome', 'feather', 'Iosevka Nerd Font', 'FiraCode';
     font-size: 14px;
@@ -7,7 +8,7 @@
     border-radius: 0;
     min-height: 0;
     margin: 0;
-   background-color: transparent;
+    background-color: transparent;
 }
 
 
@@ -39,82 +40,84 @@ button:hover {
 }
 
 
+
 #custom-power {
-	margin: 2;
-    padding: 4px 4px 4px 4px;
-	border-radius: 20%;
-    background-color: #B5250E;
-    color: #ffffff;
-}
-
-
-/*---------------------- WORKSPACES MODULE ----------------*/
-
-
-#workspaces {
     margin: 4;
-    padding: 2;
-    border-radius: 6;
-    background-color: #091e2c;
+    padding: 6;
+    border-radius: 8;
+    background-color: #e75f55;
 }
 
 
-#workspaces button {
-    border-radius: 100;
-    background-color: #a6b9c0;
-	color: #FFFFFF;
-    margin: 4;
-    padding: 2;
-}
+/* WORKSPACES MODULE STYLING */
 
-#workspaces button.empty {
-    background-color: #234758;
-}
-
-#workspaces button:hover {
-	color: #ffffff;
-    background: #ffffff;
-    
-}
-
-#workspaces button.focused,
-#workspaces button.visible:not(.focused) {
-	color: #ffffff;
-    background-color: #ffffff;
-}
+    #workspaces {
+        margin: 4;
+        padding: 2;
+        border-radius: 6;
+        background-color: #091e2c;
+    }
 
 
+    #workspaces button {
+        border-radius: 100;
+        background-color: #affce2;
+        color: #FFFFFF;
+        margin: 4;
+        padding: 2;
+    }
 
-/*--------------- END OF WORKSPACES MODULE ----------------*/
+    #workspaces button.empty {
+        background-color: #234758;
+    }
+
+    #workspaces button:hover {
+        color: #ffffff;
+        background: #ffffff;
+        
+    }
+
+    #workspaces button.focused,
+    #workspaces button.visible:not(.focused) {
+        color: #ffffff;
+        background-color: #ffffff;
+    }
 
 
-#taskbar {
-    margin: 4;
-    padding: 2;
-    border-radius: 6;
-    background-color: #091e2c;
-}
+/* END OF WORKSPACES MODULE STYLING */
 
-#taskbar button {
-    border-radius: 6;
-    background-color: #091e2c;
-	color: #FFFFFF;
-    margin: 2;
-    padding: 4;
-}
 
-#taskbar button:hover {
-	color: #ffffff;
-    background: #234758;
-}
+/* TASKBAR MODULE STYLING */
 
-#taskbar.empty {
-    background-color: transparent;
-}
+    #taskbar {
+        margin: 4;
+        padding: 2;
+        border-radius: 6;
+        background-color: #091e2c;
+    }
+
+    #taskbar button {
+        border-radius: 6;
+        background-color: #091e2c;
+    	color: #FFFFFF;
+        margin: 2;
+        padding: 4;
+    }
+
+    #taskbar button:hover {
+    	color: #ffffff;
+        background: #234758;
+    }
+
+    #taskbar.empty {
+        background-color: transparent;
+    }
+ 
+/* END OF TASKBAR MODULE STYLING */
 
 /*------------------- HOVER STYLES -------------------------*/
 
-#pulseaudio:hover {
+/* #pulseaudio:hover {
     color: #F7CB4D;
 }
 
@@ -153,7 +156,7 @@ button:hover {
 
 #clock:hover {
 	color: #FC6D60;
-}
+} */
 
 /*----------------- END OF HOVER STYLES ---------------------*/
 

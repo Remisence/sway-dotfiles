@@ -1,106 +1,84 @@
-/**
- * Rofi Theme File
- * Rofi Version: 1.7.3
- **/
+ /*****----- Imports -----*****/
+@import                          "colors.rasi"
+@import                          "fonts.rasi"
 
 /*****----- Configuration -----*****/
 configuration {
     show-icons:                  false;
     hover-select:                 true;
-    e-select-entry: 	"MousePrimary";
+    me-select-entry: 	"";
 	me-accept-entry: 	"!MousePrimary";
+    kb-cancel:          ["MousePrimary", "Escape"];
 }
-
-/*****----- Global Properties -----*****/
-@import                          "colors.rasi"
-@import                          "fonts.rasi"
 
 /*
 USE_BUTTONS=YES
 */
 
+window {
+    fullscreen:             true;
+    background:             transparent;
+    location:               north east;
+}
+
 /*****----- Main Window -----*****/
 window {
     /* properties for window widget */
+    border:                     1px solid;
     transparency:                "real";
     location:                    north east;
     anchor:                      north east;
     fullscreen:                  false;
-    width:                       174px;
-    x-offset:                    0px;
-    y-offset:                    30px;
+    width:                       175px;
+    x-offset:                    -4px;
+    y-offset:                    4px;
 
     /* properties for all widgets */
     enabled:                     true;
     margin:                      0px;
     padding:                     0px;
     border:                      0px solid;
-    border-radius:               0px;
+    border-radius:               8px;
     border-color:                @selected;
     cursor:                      "default";
     background-color:            @background;
 }
 
+
+
 /*****----- Main Box -----*****/
 mainbox {
     enabled:                     true;
-    spacing:                     0px;
-    margin:                      0px;
-    padding:                     0px;
     border:                      0px solid;
-    border-radius:               0px;
+    border-radius:               6px;
     border-color:                @selected;
     background-color:            transparent;
     children:                    [ "listview" ];
 }
 
-/*****----- Inputbar -----*****/
-inputbar {
-    enabled:                     true;
-    spacing:                     0px;
-    margin:                      0px;
-    padding:                     0px;
-    border:                      0px;
-    border-radius:               0px;
-    border-color:                @selected;
-    background-color:            transparent;
-    text-color:                  @foreground;
-    children:                    [ "textbox-prompt-colon", "prompt"];
-}
 
-textbox-prompt-colon {
-    enabled:                     true;
-    expand:                      false;
-    str:                         "";
-    padding:                     0px 0px;
-    border-radius:               0px;
-    background-color:            @urgent;
-    text-color:                  @background;
-}
-prompt {
-    enabled:                     true;
-    padding:                     0px;
-    border-radius:               0px;
-    background-color:            @active;
-    text-color:                  @background;
-}
+
+/*****------ Not sure what this one is for ------*****/
+
+
 
 /*****----- Message -----*****/
 message {
     enabled:                     true;
     margin:                      0px;
-    padding:                     12px;
+    padding:                     0px;
     border:                      0px solid;
-    border-radius:               0px;
+    border-radius:               6px;
     border-color:                @selected;
     background-color:            @background;
     text-color:                  @foreground;
 }
 textbox {
+    pading:                      4px;
     background-color:            inherit;
     text-color:                  inherit;
     vertical-align:              0;
-    horizontal-align:            0;
+    horizontal-align:            0.5;
     placeholder-color:           @foreground;
     blink:                       true;
     markup:                      true;
@@ -118,20 +96,20 @@ error-message {
 listview {
     enabled:                     true;
     columns:                     1;
-    lines:                       4;
+    lines:                       3;
     cycle:                       true;
-    dynamic:                     false;
+    dynamic:                     true;
     scrollbar:                   false;
     layout:                      vertical;
     reverse:                     false;
     fixed-height:                true;
     fixed-columns:               true;
     
-    spacing:                     0px;
-    margin:                      0px;
+    spacing:                     4px;
+    margin:                      4px;
     padding:                     0px;
     border:                      0px solid;
-    border-radius:               1px;
+    border-radius:               6px;
     border-color:                @selected;
     background-color:            transparent;
     text-color:                  @foreground;
@@ -144,21 +122,21 @@ element {
     enabled:                     true;
     spacing:                     0px;
     margin:                      0px;
-    padding:                     1px 10px;
+    padding:                     4px;
     border:                      0px solid;
-    border-radius:               0%;
+    border-radius:               6px;
     border-color:                @selected;
     background-color:            @background;
     text-color:                  @foreground;
     cursor:                      pointer;
 }
 element-text {
-    font:                        "feather 18";
+    horizontal-align:            0.5;
     background-color:            transparent;
     text-color:                  inherit;
     cursor:                      inherit;
 }
 element selected.normal {
-    background-color:            var(selected);
+    background-color:            var(foreground);
     text-color:                  var(background);
 }

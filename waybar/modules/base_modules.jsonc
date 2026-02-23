@@ -9,7 +9,7 @@
     "wlr/taskbar":
     {
         "format": "{icon}",
-        "icon-size": 20,
+        "icon-size": 16,
         "tooltip-format": "{title:.50}",
         "on-click": "minimize-raise",
         "on-click-middle": "close",
@@ -48,18 +48,14 @@
 			"6": ["DP-3"],
         },
 	},
-    
-	"sway/window": {
-		"format": "{app_id}",
-		"max-length": 50,
-	},
 
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         "format": "{icon} {volume}%",
         "format-muted": "<span font-family='Symbols Nerd Font' rise='0' font='18px'> </span>",
         "format-icons": {
-			"default": [
+			"default": 
+            [
 				"<span font-family='Symbols Nerd Font' rise='0' font='18px'></span>", 
 				"<span font-family='Symbols Nerd Font' rise='0' font='18px'></span>", 
 				"<span font-family='Symbols Nerd Font' rise='0' font='18px'></span>"
@@ -82,11 +78,7 @@
 			"unlocked": ""
 		}
     },
-    
-    "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>"
-    },
-    
+
     "sway/scratchpad": {
         "format": "{icon} {count}",
         "show-empty": false,

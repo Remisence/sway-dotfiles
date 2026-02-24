@@ -1,5 +1,4 @@
 /**
- * 
  * Colors
  **/
 
@@ -7,7 +6,7 @@
     background:     #0D1316;
     background-alt: #282B31FF;
     foreground:     #faf7ff;
-    selected:       #0fd94f;
+    selected:       #e60000;
     active:         #B9C244;
     urgent:         #E06C75FF;
 }

@@ -1,45 +1,56 @@
 #!/usr/bin/env bash
 
-## Rofi   : Power Menu
-#
-## Available Styles
-#
-
 # Current Theme
 dir="$HOME/.config/rofi/powermenu/theme"
-theme='simple'
-
-# CMDs
-uptime="`uptime -p | sed -e 's/up //g'`"
-host=`hostname`
+theme='theme.rasi'
 
 # Options
-shutdown=' Shutdown'
+shutdown=' Shutoff'
 reboot=' Reboot'
-suspend=' Suspend'
 logout=' Logout'
-yes=' Yes'
-no=' No'
+yes='󰗠 Yes'
+no=' No'
 
 # Rofi CMD
 rofi_cmd() {
 	rofi -dmenu \
-		-p "Uptime: $uptime" \
-		-mesg "Uptime: $uptime" \
-		-theme ${dir}/${theme}.rasi
+		-theme ${dir}/${theme}
 }
 
 # Confirmation CMD
 confirm_cmd() {
-	rofi -theme-str 'window {location: north east; anchor: north east; fullscreen: false; width: 325px;}' \
-		-theme-str 'mainbox {children: [ "message", "listview" ];}' \
-		-theme-str 'listview {columns: 2; lines: 1;}' \
-		-theme-str 'element-text {vertical-align: 0.5; padding: 5 px;}' \
-		-theme-str 'textbox {horizontal-align: 0;}' \
-		-dmenu \
+	rofi \
+	-theme-str \
+		'window {
+			location: north east; 
+			anchor: north east; 
+			fullscreen: false; 
+		}' \
+	-theme-str \
+		'mainbox {
+			children: [ 
+				"message", 
+				"listview" 
+			];
+		}' \
+	-theme-str \
+		'listview {
+			columns: 2; 
+			lines: 1;
+			horizontal-align: 0.5;
+		}' \
+	-theme-str \
+		'element-text {
+			horizontal-align: 0.5;
+		}' \
+	-theme-str \
+	 	'textbox {
+			margin: 10px;
+		}' \
+	-dmenu \
 		-p 'Confirmation' \
 		-mesg 'Are you Sure?' \
-		-theme ${dir}/${theme}.rasi
+		-theme ${dir}/${theme}
 }
 
 # Ask for confirmation
@@ -49,7 +60,7 @@ confirm_exit() {
 
 # Pass variables to rofi dmenu
 run_rofi() {
-	echo -e "$suspend\n$logout\n$reboot\n$shutdown" | rofi_cmd
+	echo -e "$logout\n$reboot\n$shutdown" | rofi_cmd
 }
 
 # Execute Command
@@ -60,11 +71,11 @@ run_cmd() {
 			systemctl poweroff
 		elif [[ $1 == '--reboot' ]]; then
 			systemctl reboot
-		elif [[ $1 == '--suspend' ]]; then
-			systemctl suspend
 		elif [[ $1 == '--logout' ]]; then
 			if [[ "$DESKTOP_SESSION" == 'bspwm' ]]; then
 				bspc quit
+			elif [[ "$DESKTOP_SESSION" == 'sway' ]]; then
+				swaymsg eixt
 			fi
 		fi
 	else
@@ -80,9 +91,6 @@ case ${chosen} in
         ;;
     $reboot)
 		run_cmd --reboot
-        ;;
-    $suspend)
-		run_cmd --suspend
         ;;
     $logout)
 		run_cmd --logout

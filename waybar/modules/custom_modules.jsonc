@@ -1,0 +1,43 @@
+{
+	//////////////////////////////////////////////////////
+	//												    //
+	//				 Custom Modules	Config				//
+	//												    //
+	//////////////////////////////////////////////////////
+
+    "group/traydrawer": {
+		"orientation": "horizontal",
+		"drawer": {
+			"transition-left-to-right": false,
+			"click-to-reveal": true,
+		},
+		"modules": ["custom/traydrawer-wrap", "tray"]
+	},
+
+	"custom/traydrawer-wrap": {
+        "format": "<span font-family='Symbols Nerd Font' font='18px' rise='0'></span>",
+		"tooltip-format": "Tray"
+	}, 
+	
+    "group/sysmon": {
+		"orientation": "horizontal",
+		"drawer": {
+			"transition-left-to-right": false,
+			"click-to-reveal": true,
+		},
+		"modules": ["custom/sysmon-wrap", "cpu", "memory", "temperature#cpu",
+		"temperature#gpu"]
+	},
+
+	"custom/sysmon-wrap": {
+        "format": "<span font-family='Symbols Nerd Font' font='18px' rise='0'></span>",
+		"tooltip-format": "System Monitor"
+	},
+
+	"custom/power":{ 
+		"tooltip": false,
+		"format":"<span font-family='Symbols Nerd Font' font='18px' rise='0'></span>", 
+		"on-click":"$HOME/.config/rofi/powermenu/scripts/powermenu.sh" 
+	}, 
+
+}

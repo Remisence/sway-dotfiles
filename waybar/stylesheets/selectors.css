@@ -1,0 +1,55 @@
+tooltip,
+menu,
+menuitem,
+label,
+button,
+#taskbar,
+#clock,
+#cpu,
+#memory,
+#temperature,
+#temperature.cpu,
+#temperature.gpu,
+#pulseaudio,
+#tray,
+#language,
+#mode,
+#scratchpad,
+#custom-traydrawer-wrap,
+#custom-sysmon-wrap,
+#custom-power,
+#workspaces,
+#workspaces button,
+#taskbar button {
+    min-height: 0;
+}
+
+#taskbar,
+#clock,
+#cpu,
+#memory,
+#temperature,
+#temperature.cpu,
+#temperature.gpu,
+#pulseaudio,
+#tray,
+#language,
+#mode,
+#scratchpad,
+#custom-traydrawer-wrap,
+#custom-sysmon-wrap,
+#custom-power {
+    background-color: transparent;
+    margin: 4px;
+    color: #ffffff;
+}
+
+*:not(menu):not(menuitem):not(tooltip)
+{
+    background-color: transparent;
+}
+
+*:not(menuitem)
+{
+    border-radius: 6px;
+}

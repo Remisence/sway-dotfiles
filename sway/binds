@@ -4,7 +4,7 @@
 bindsym $mod+q exec $term
 
 # Start a terminal in floating mode
-bindsym $mod+shift+q exec $term --class=floating-terminal
+bindsym $mod+shift+q exec $term --title=floating-terminal
 
 # Kill focused window
 bindsym $mod+w kill

@@ -8,18 +8,13 @@ configuration {
     hover-select:                 true;
     me-select-entry: 	"";
 	me-accept-entry: 	"!MousePrimary";
-    kb-cancel:          ["MousePrimary", "Escape"];
+    kb-cancel:          ["MouseSecondary", "Escape"];
 }
 
 /*
 USE_BUTTONS=YES
 */
 
-window {
-    fullscreen:             true;
-    background:             transparent;
-    location:               north east;
-}
 
 /*****----- Main Window -----*****/
 window {
@@ -43,7 +38,6 @@ window {
     cursor:                      "default";
     background-color:            @background;
 }
-
 
 
 /*****----- Main Box -----*****/
@@ -137,6 +131,7 @@ element-text {
     cursor:                      inherit;
 }
 element selected.normal {
-    background-color:            var(foreground);
-    text-color:                  var(background);
+    background-image:            linear-gradient(to right, #5B4CA1, #56b3df);
+    text-color:                  var(foreground);
 }
+

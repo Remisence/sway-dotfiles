@@ -43,6 +43,6 @@ set $right l
 set $term alacritty
 
 # Rofi
-set $menu ~/.config/rofi/launcher/launcher.sh
+set $menu ~/.config/rofi/launcher/scripts/launcher.sh
 
 ######################################################

@@ -57,8 +57,6 @@ button:hover {
     }
 
     #custom-power:hover {
-        margin: 4;
-        padding: 6;
         border-radius: 8;
         background-color: #92312a;
     }
@@ -76,7 +74,7 @@ button:hover {
 
     #workspaces button {
         border-radius: 100;
-        background-color: #affce2;
+        background-color: #6ba59b;
         color: #FFFFFF;
         margin: 4;
         padding: 2;
@@ -127,6 +125,37 @@ button:hover {
     }
 
 /*  */
+
+/* TRAY MODULE STYLING */
+
+    #tray {
+        padding: 4px;
+    }
+
+    #tray.empty {
+        background-color: transparent;
+    }
+
+    #traydrawer {
+        border-radius: 6;
+        background-color: #091e2c;
+    }
+
+    #custom-traydrawer-wrap {
+        padding: 4 8 4 7px;
+    }
+
+    #custom-traydrawer-wrap:hover {
+        background-color: #29495f;
+    }
+
+/*  */
+
+#sysmon {
+    padding: 2;
+    border-radius: 6;
+    background-color: #091e2c;        
+}
 
 
 #scratchpad {

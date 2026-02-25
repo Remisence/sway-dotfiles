@@ -36,9 +36,10 @@ button,
 #language,
 #mode,
 #scratchpad,
-#custom-traydrawer-wrap,
 #custom-sysmon-wrap,
-#custom-power {
+#custom-power,
+#traydrawer,
+#sysmon {
     background-color: transparent;
     margin: 4px;
     color: #ffffff;

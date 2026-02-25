@@ -17,6 +17,7 @@ button,
 #scratchpad,
 #custom-traydrawer-wrap,
 #custom-sysmon-wrap,
+#sysmon,
 #custom-power,
 #workspaces,
 #workspaces button,
@@ -31,17 +32,22 @@ button,
 #temperature,
 #temperature.cpu,
 #temperature.gpu,
-#pulseaudio,
 #tray,
+#traydrawer,
 #language,
 #mode,
 #scratchpad,
-#custom-traydrawer-wrap,
-#custom-sysmon-wrap,
-#custom-power {
-    background-color: transparent;
+#custom-power,
+#workspaces,
+#workspaces button,
+#clock,
+#language,
+#pulseaudio,
+#taskbar,
+#sysmon {
     margin: 4px;
     color: #ffffff;
+    background-color: transparent;
 }
 
 *:not(menu):not(menuitem):not(tooltip)
@@ -49,7 +55,17 @@ button,
     background-color: transparent;
 }
 
-*:not(menuitem)
+*:not(menuitem),
+#taskbar button
 {
     border-radius: 6px;
+}
+
+#custom-power,
+#custom-traydrawer-wrap,
+#custom-sysmon-wrap,
+#pulseaudio,
+#language,
+#clock {
+    padding: 6px;
 }

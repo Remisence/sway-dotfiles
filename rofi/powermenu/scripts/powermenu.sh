@@ -5,7 +5,7 @@ dir="$HOME/.config/rofi/powermenu/theme"
 theme='theme.rasi'
 
 # Options
-shutdown=' Shutoff'
+shutdown=' Shutdown'
 reboot=' Reboot'
 logout=' Logout'
 yes='󰗠 Yes'

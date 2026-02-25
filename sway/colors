@@ -1,8 +1,10 @@
 # Colors
 
-client.focused                 #e60000 #732F22 #FFFFFF #27D3F5 #e60000
-client.focused_inactive        #000001 #3B3B3B #999999 #3B3B3B
-client.unfocused               #000001 #3B3B3B #999999 #3B3B3B
+#                               border      background  text        indicator   child_border 
+    
+client.focused                  #ffffff     #091e2c     #FFFFFF     #ffffff     #ffffff
+client.focused_inactive         #000001     #000001     #999999     #000001     #000001
+client.unfocused                #000001     #000001     #999999     #000001     #000001
 
 ######################################################
 

@@ -3,5 +3,5 @@
  **/
 
 * {
-    font: "Symbols Nerd Font 16";
+    font: "FiraCode 16";
 }

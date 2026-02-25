@@ -1,57 +1,19 @@
 @import "./stylesheets/selectors.css";
-
+@import "./stylesheets/tooltips_menus.css";
 *
 {
     /* Applies to all elements */
     font-family: 'Symbols Nerd Font', 'JetBrainsMono', 'JetBrains Mono', 'FontAwesome', 'feather', 'Iosevka Nerd Font', 'FiraCode';
     font-size: 14px;
     padding: 0px;
+    margin: 0;
     border: none;
     border-radius: 0;
-    margin: 0;
 }
 
-tooltip {
-    color: #ffffff;
-    padding: 0px;
-    margin: 2 4 2 4px;
-    border-radius: 6px;
-    background-color: #091e2c;
-    text-shadow: none;
-}
-
-menu {
-    background-color: #091e2c;
-    color: #ffffff;
-    border-color: transparent;
-    
-}
-
-menuitem {
-    background-color: #091e2c;
-    margin: 6px;
-    padding: 4px;
-    border-radius: 6;
-    color: #ffffff;
-    border-color: transparent;
-}
-
-menuitem:hover {
-    background: linear-gradient(to right, #5B4CA1, #56b3df);
-    color:  #ffffff;
-    border-radius: 6;
-}
-
-button,
-button:hover {
-	border-radius: 0px;
-	border: none;
-}
-
-/* POWER BUTTON STYLING*/
+/* POWER BUTTON STYLING */
 
     #custom-power {
-        padding: 6;
         border-radius: 8;
         background-color: #e75f55;
     }
@@ -66,9 +28,7 @@ button:hover {
 /* WORKSPACES MODULE STYLING */
 
     #workspaces {
-        margin: 4;
         padding: 2;
-        border-radius: 6;
         background-color: #091e2c;
     }
 
@@ -76,7 +36,6 @@ button:hover {
         border-radius: 100;
         background-color: #6ba59b;
         color: #FFFFFF;
-        margin: 4;
         padding: 2;
     }
 
@@ -101,14 +60,11 @@ button:hover {
 /* TASKBAR MODULE STYLING */
 
     #taskbar {
-        margin: 4;
         padding: 2;
-        border-radius: 6;
         background-color: #091e2c;
     }
 
     #taskbar button {
-        border-radius: 6;
         background-color: #091e2c;
     	color: #FFFFFF;
         margin: 2;
@@ -119,6 +75,11 @@ button:hover {
     	color: #ffffff;
         background: #234758;
     }
+
+    #taskbar button.active {
+    	color: #ffffff;
+        background: #234758;
+    }    
 
     #taskbar.empty {
         background-color: transparent;
@@ -137,31 +98,75 @@ button:hover {
     }
 
     #traydrawer {
-        border-radius: 6;
         background-color: #091e2c;
     }
 
-    #custom-traydrawer-wrap {
-        padding: 4 8 4 7px;
-    }
-
     #custom-traydrawer-wrap:hover {
-        background-color: #29495f;
+        background-color: #234758;
     }
 
 /*  */
 
-#sysmon {
-    padding: 2;
-    border-radius: 6;
-    background-color: #091e2c;        
-}
+/* PULSEAUDIO MODULE STYLING */
 
+    #pulseaudio {
+        background-color: #091e2c;
+    }
 
-#scratchpad {
-    background: rgba(0, 0, 0, 0.2);
-}
+    #pulseaudio:hover {
+    	color: #ffffff;
+        background: #234758;
+    }
 
-#scratchpad.empty {
-	background-color: transparent;
-} 
+/*  */
+
+/* LANGUAGE MODULE STYLING */
+
+    #language {
+        background-color: #091e2c;
+    }
+
+    #language:hover {
+    	color: #ffffff;
+        background: #234758;
+    }
+
+/*  */
+
+/* CLOCK MODULE STYLING */
+
+    #clock {
+        background-color: #091e2c;
+    }
+
+    #clock:hover {
+    	color: #ffffff;
+        background: #234758;
+    }
+
+/*  */
+
+/* SYSMON MODULE STYLING */
+
+    #sysmon {
+        background-color: #091e2c;
+    }
+
+    #custom-sysmon-wrap:hover {
+        background-color: #234758;
+    }
+
+/*  */
+
+/* CLOCK MODULE STYLING */
+
+    #scratchpad {
+        padding: 4;
+        background-color: #091e2c;
+    }
+
+    #scratchpad.empty {
+    	background-color: transparent;
+    } 
+
+/*  */

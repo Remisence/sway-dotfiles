@@ -12,6 +12,7 @@ for_window {
 	[app_id=".*pulseaudio.*"] floating enable
 	[title="Picture-in-Picture"] floating enable
 	[class="Godot"] floating enable
+	[title="."] title_format %app_id
 }
 
 ######################################################

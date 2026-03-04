@@ -12,3 +12,8 @@ If you are going to use these, please note that I have made them specifically fo
 Rofi app launcher:
 
 <img width="464" height="411" alt="image" src="https://github.com/user-attachments/assets/6036509e-2cc5-4a4c-adee-fef06a28ef7e" />
+
+
+Rofi Powermenu:
+
+<img width="351" height="175" alt="image" src="https://github.com/user-attachments/assets/dc8468d6-20ed-4c77-afe4-23ed5c756f69" />

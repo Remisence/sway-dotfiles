@@ -25,8 +25,8 @@ window {
     anchor:                      north east;
     fullscreen:                  false;
     width:                       165px;
-    x-offset:                    -4px;
-    y-offset:                    4px;
+    x-offset:                    3px;
+    y-offset:                    2px;
 
     /* properties for all widgets */
     enabled:                     true;
@@ -44,6 +44,7 @@ window {
 mainbox {
     enabled:                     true;
     border:                      0px solid;
+    margin:                      0px;
     border-radius:               6px;
     border-color:                @selected;
     background-color:            transparent;
@@ -100,8 +101,8 @@ listview {
     fixed-columns:               true;
     
     spacing:                     4px;
-    margin:                      4px;
-    padding:                     0px;
+    margin:                      2px;
+    padding:                     2px;
     border:                      0px solid;
     border-radius:               6px;
     border-color:                @selected;

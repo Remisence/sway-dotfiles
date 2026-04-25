@@ -2,9 +2,9 @@
 
 #                               border      background  text        indicator   child_border 
     
-client.focused                  #ffffff     #091e2c     #FFFFFF     #ffffff     #ffffff
-client.focused_inactive         #000001     #000001     #999999     #000001     #000001
-client.unfocused                #000001     #000001     #999999     #000001     #000001
+client.focused                  #ffffff00     #091e2c     #FFFFFF     #ffffff00     #ffffff00
+client.focused_inactive         #00000100     #000001     #999999     #00000100     #00000100
+client.unfocused                #00000100     #000001     #999999     #00000100     #00000100
 
 ######################################################
 

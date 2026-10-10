@@ -8,7 +8,7 @@ titlebar_separator disable
 
 gaps outer 4
 
-default_border pixel 3
+default_border pixel 1
 corner_radius 8
 
 seat seat0 xcursor_theme nordic_cursors_scalable 24

@@ -1,5 +1,5 @@
 #! /bin/bash
-for x in alacritty fish ranger sway waybar rofi
+for x in alacritty fish ranger sway waybar rofi fastfetch
 do
 	rsync -a ~/.config/"$x"/ ~/sway-dotfiles/"$x"/
 done

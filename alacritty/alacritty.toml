@@ -31,6 +31,7 @@ resize_increments = false
 decorations = "Full"
 decorations_theme_variant = "Dark" # "Light"
 
+
 [font]
 
 normal.family = "Fira Code"

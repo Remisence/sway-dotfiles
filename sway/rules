@@ -1,6 +1,6 @@
 #### window rules (like bspwm) ####
 
-assign [class="discord"] 01
+assign [app_id="discord"] 01
 assign [class="steam"] 3
 
 for_window { 

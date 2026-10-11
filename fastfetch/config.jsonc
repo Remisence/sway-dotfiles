@@ -36,11 +36,6 @@
             "format": "{#1;green}│ {#}   {#blue}Temp{#} {temperature>13}"
         },
         {
-            "type": "cpuusage",
-            "key": " ",
-            "format": "{#1;green}│ {#}   {#blue}Usage{#} {avg>7}"
-        },
-        {
             "type": "gpu",
             "key": " ",
             "format": "{#1;green}│ 󰍹 {#} {#1;green}{name}{#}"
@@ -49,7 +44,7 @@
             "type": "gpu",
             "key": " ",
             "driverSpecific": true,
-            "format": "{#1;green}│ {#}   {#blue}VRAM usage{#} {dedicated-used} / {dedicated-total}"
+            "format": "{#1;green}│ {#}   {#blue}VRAM{#} {dedicated-used>14} / {dedicated-total}"
         },
         {
             "type": "gpu",
@@ -57,12 +52,6 @@
             "driverSpecific": true,
             "temp": true,
             "format": "{#1;green}│ {#}   {#blue}Temp{#} {temperature>13}"
-        },
-        {
-            "type": "gpu",
-            "key": " ",
-            "driverSpecific": true,
-            "format": "{#1;green}│ {#}   {#blue}Usage{#} {core-usage-num>7}"
         },
         {
 			"type": "custom",
@@ -98,7 +87,6 @@
 			"type": "custom",
 			"format": "{#yellow}┌────────────────────────────── ─ ─ ─ - - ┄ ┄{#}"
         },
-        
         {
             "type": "OS",
             "key": " ",
@@ -121,59 +109,56 @@
         },
         "break",
         {
-            "type": "de",
-            "key": "󰧨  DE",
-            "keyColor": "blue"
+            "type": "custom",
+            "format": "{#1;blue}󰧨  DE{#}"
+        },
+        {
+			"type": "custom",
+			"format": "{#blue}┌────────────────────────────── ─ ─ ─ - - ┄ ┄{#}"
         },
         {
             "type": "lm",
-            "key": "│ ├󰍁 ",
-            "keyColor": "blue"
+            "key": " ",
+            "format": "{#blue}│ 󰍁 {#} {#1;blue}LM{#} {service>14}"
         },
         {
             "type": "wm",
-            "key": "│ ├󱂬 ",
-            "keyColor": "blue"
-        },
-        {
-            "type": "wmtheme",
-            "key": "│ ├󰉦 ",
-            "keyColor": "blue"
+            "key": " ",
+            "format": "{#blue}│ 󱂬{#}  {#1;blue}WM{#} {pretty-name>11}"
         },
         {
             "type": "terminal",
-            "key": "└ └󰆍 ",
-            "keyColor": "blue"
+            "key": " ",
+            "format": "{#blue}└ 󰆍 {#} {#1;blue}Terminal{#} {pretty-name>10}"
+        },
+        "break",
+        {
+			"type": "custom",
+			"format": "{#1;magenta}  Uptime / Datetime{#}"
+        },
+        {
+            "type": "custom",
+			"format": "{#magenta}┌────────────────────────────── ─ ─ ─ - - ┄ ┄{#}"
+        },
+        {
+            "type": "uptime",
+            "key": " ",
+            "format": "{#1;magenta}│ Uptime{#} {formatted>21}"
+        },
+        {
+            "type": "datetime",
+            "key": " ",
+            "format": "{#1;magenta}└ Datetime{#} {day-pretty>6}/{month-pretty}/{year}"
         },
         "break",
         {
             "type": "custom",
-            "format": "\u001b[90m┌────────────────────Uptime / Age / DT────────────────────┐"
-        },
-        {
-            "type": "command",
-            "key": "  ›  OS Age  ",
-            "keyColor": "magenta",
-            "text": "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days"
-        },
-        {
-            "type": "uptime",
-            "key": "  ›  Uptime  ",
-            "keyColor": "magenta"
-        },
-        {
-            "type": "datetime",
-            "key": "  ›  DateTime  ",
-            "keyColor": "magenta"
-        },
-        {
-            "type": "custom",
-            "format": "\u001b[90m└─────────────────────────────────────────────────────────┘"
+            "format": "\u001b[90m┄ ┄ - - ─ ─ ─ ──────────────── ─ ─ ─ - - ┄ ┄"
         },
         {
             "type": "colors",
-            "paddingLeft": 2,
-            "symbol": "circle"
+            "paddingLeft": 0,
+            "symbol": "square",
         }
     ]
 }

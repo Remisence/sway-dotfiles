@@ -33,7 +33,7 @@
             "type": "cpu",
             "key": " ",
             "temp": true,
-            "format": "{#1;green}│ {#}   {#blue}Temp{#} {temperature>13}"
+            "format": "{#1;green}│ {#}   {#blue}Temp{#}      {temperature}"
         },
         {
             "type": "gpu",
@@ -44,14 +44,14 @@
             "type": "gpu",
             "key": " ",
             "driverSpecific": true,
-            "format": "{#1;green}│ {#}   {#blue}VRAM{#} {dedicated-used>14} / {dedicated-total}"
+            "format": "{#1;green}│ {#}   {#blue}VRAM{#}      {dedicated-used} / {dedicated-total}"
         },
         {
             "type": "gpu",
             "key": " ",
             "driverSpecific": true,
             "temp": true,
-            "format": "{#1;green}│ {#}   {#blue}Temp{#} {temperature>13}"
+            "format": "{#1;green}│ {#}   {#blue}Temp{#}      {temperature}"
         },
         {
 			"type": "custom",
@@ -143,7 +143,7 @@
         {
             "type": "uptime",
             "key": " ",
-            "format": "{#1;magenta}│ Uptime{#} {formatted>21}"
+            "format": "{#1;magenta}│ Uptime{#}       {formatted}"
         },
         {
             "type": "datetime",

@@ -75,7 +75,7 @@ run_cmd() {
 			if [[ "$DESKTOP_SESSION" == 'bspwm' ]]; then
 				bspc quit
 			elif [[ "$DESKTOP_SESSION" == 'sway' ]]; then
-				swaymsg eixt
+				swaymsg exit
 			fi
 		fi
 	else

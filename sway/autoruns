@@ -3,6 +3,7 @@
 bar {
      swaybar_command waybar
 }
+exec easyeffects
 exec nm-applet
 exec lxqt-policykit-agent
 exec dunst

@@ -1,0 +1,2 @@
+[alias]
+	tree = log --pretty=format:\"%C(Green)──────────────────────────────────────────────────────────────────%n%C(Green)%cn - %C(Blue)%h%C(Yellow)%(decorate:prefix= @ (,tag=%D ,separator= | ,pointer= > )%C(Green)%nDate: %cr, %w()[%ch]%nChanges: %<(60,trunc)%f%n%n\" --graph

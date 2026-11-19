@@ -1,0 +1,172 @@
+@import "./stylesheets/selectors.css";
+@import "./stylesheets/tooltips_menus.css";
+*
+{
+    /* Applies to all elements */
+    font-family: 'Symbols Nerd Font', 'JetBrainsMono', 'JetBrains Mono', 'FontAwesome', 'feather', 'Iosevka Nerd Font', 'FiraCode';
+    font-size: 14px;
+    padding: 0px;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+}
+
+/* POWER BUTTON STYLING */
+
+    #custom-power {
+        border-radius: 8;
+        background-color: #e75f55;
+    }
+
+    #custom-power:hover {
+        border-radius: 8;
+        background-color: #92312a;
+    }
+
+/*  */
+
+/* WORKSPACES MODULE STYLING */
+
+    #workspaces {
+        padding: 2;
+        background-color: #091e2c;
+    }
+
+    #workspaces button {
+        border-radius: 100;
+        background-color: #6ba59b;
+        color: #FFFFFF;
+        padding: 2;
+    }
+
+    #workspaces button.empty {
+        background-color: #234758;
+    }
+
+    #workspaces button:hover {
+        color: #ffffff;
+        background: #ffffff;
+        
+    }
+
+    #workspaces button.focused,
+    #workspaces button.visible:not(.focused) {
+        color: #ffffff;
+        background-color: #ffffff;
+    }
+
+/*  */
+
+/* TASKBAR MODULE STYLING */
+
+    #taskbar {
+        padding: 2;
+        background-color: #091e2c;
+    }
+
+    #taskbar button {
+        background-color: #091e2c;
+    	color: #FFFFFF;
+        margin: 2;
+        padding: 4;
+    }
+
+    #taskbar button:hover {
+    	color: #ffffff;
+        background: #234758;
+    }
+
+    #taskbar button.active {
+    	color: #ffffff;
+        background: #234758;
+    }    
+
+    #taskbar.empty {
+        background-color: transparent;
+    }
+
+/*  */
+
+/* TRAY MODULE STYLING */
+
+    #tray {
+        padding: 4px;
+    }
+
+    #tray.empty {
+        background-color: transparent;
+    }
+
+    #traydrawer {
+        background-color: #091e2c;
+    }
+
+    #custom-traydrawer-wrap:hover {
+        background-color: #234758;
+    }
+
+/*  */
+
+/* PULSEAUDIO MODULE STYLING */
+
+    #pulseaudio {
+        background-color: #091e2c;
+    }
+
+    #pulseaudio:hover {
+    	color: #ffffff;
+        background: #234758;
+    }
+
+/*  */
+
+/* LANGUAGE MODULE STYLING */
+
+    #language {
+        background-color: #091e2c;
+    }
+
+    #language:hover {
+    	color: #ffffff;
+        background: #234758;
+    }
+
+/*  */
+
+/* CLOCK MODULE STYLING */
+
+    #clock {
+        background-color: #091e2c;
+    }
+
+    #clock:hover {
+    	color: #ffffff;
+        background: #234758;
+    }
+
+/*  */
+
+/* SYSMON MODULE STYLING */
+
+    #sysmon {
+        background-color: #091e2c;
+    }
+
+    #custom-sysmon-wrap:hover {
+        background-color: #234758;
+    }
+
+/*  */
+
+/* CLOCK MODULE STYLING */
+
+    #scratchpad {
+        padding: 4;
+        background-color: #091e2c;
+    }
+
+    #scratchpad.empty {
+    	background-color: transparent;
+    } 
+
+/*  */

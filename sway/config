@@ -1,0 +1,16 @@
+include /etc/sway/config.d/*
+include vars
+include autoruns
+include rules
+include binds
+include visual
+include colors
+include misc
+
+#exec /usr/lib/xdg-desktop-portal-wlr -r
+
+#### Outputs ####
+
+output DP-3 pos 0 0 mode 1920x1080@180Hz
+output HDMI-A-1 pos 1920 0 mode 1920x1080@100Hz
+

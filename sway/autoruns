@@ -1,0 +1,12 @@
+#### autoruns ####
+
+bar {
+     swaybar_command waybar
+}
+exec easyeffects
+exec nm-applet
+exec lxqt-policykit-agent
+exec dunst
+output "*" bg ./bg/bg.jpg fill
+
+######################################################

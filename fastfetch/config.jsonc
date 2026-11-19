@@ -1,0 +1,165 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+    "logo": {
+        "type": "none",
+        "height": 10,
+        "width": 5,
+        "position": "right",
+        "padding": {
+            "top": 5,
+            "left": 3
+        }
+    },
+    "modules": [
+        {
+            "type": "custom",
+            "format": "{#1;green}󰌢  PC{#}",
+        },
+        {
+			"type": "custom",
+			"format": "{#green}┌────────────────────────────── ─ ─ ─ - - ┄ ┄{#}"
+        },
+        {
+            "type": "cpu",
+            "key": " ",
+            "format": "{#1;green}│ 󰻠  {name}{#}" 
+        },
+        {
+            "type": "cpu",
+            "key": " ",
+            "format": "{#1;green}│ {#}   {#green}{cores-physical}{#} cores {#red}{cores-logical}{#} threads {#green}{freq-base}{#} / {#red}{freq-max}{#}"
+        },
+        {
+            "type": "cpu",
+            "key": " ",
+            "temp": true,
+            "format": "{#1;green}│ {#}   {#blue}Temp{#}      {temperature}"
+        },
+        {
+            "type": "gpu",
+            "key": " ",
+            "format": "{#1;green}│ 󰍹 {#} {#1;green}{name}{#}"
+        },
+        {
+            "type": "gpu",
+            "key": " ",
+            "driverSpecific": true,
+            "format": "{#1;green}│ {#}   {#blue}VRAM{#}      {dedicated-used} / {dedicated-total}"
+        },
+        {
+            "type": "gpu",
+            "key": " ",
+            "driverSpecific": true,
+            "temp": true,
+            "format": "{#1;green}│ {#}   {#blue}Temp{#}      {temperature}"
+        },
+        {
+			"type": "custom",
+			"format": "{#green}│{#}"
+        },
+        {
+            "type": "disk",
+            "key": " ",
+			"format": "{#1;green}│ 󰋊{#}  {#1;green}{name<10}{#}{size-used~0,-4} / {size-total} ({size-percentage} used)" 
+        },
+        {
+            "type": "memory",
+            "key": " ",
+			"format": "{#1;green}│ 󰑭{#}  {#1;green}RAM{#}       {used~0,-4} / {total} ({percentage} used)"			
+        },
+        {
+			"type": "custom",
+			"format": "{#green}│{#}"
+        },
+        {
+            "type": "processes",
+            "key": " ",
+			"format": "{#1;green}└   Running{#}   {result}"			
+        }, 
+
+        "break",
+
+        {
+            "type": "custom",
+            "format": "{#1;yellow}  System{#}",
+        },
+        {
+			"type": "custom",
+			"format": "{#yellow}┌────────────────────────────── ─ ─ ─ - - ┄ ┄{#}"
+        },
+        {
+            "type": "OS",
+            "key": " ",
+            "format": "{#yellow}│ {#}   {name}"
+        },
+        {
+            "type": "kernel",
+            "key": " ",
+            "format": "{#yellow}│ 󰌽 {#}  {sysname} {release} (kernel)"
+        },
+        {
+            "type": "packages",
+            "key": " ",
+            "format": "{#yellow}│ 󰏗 {#}  {flatpak-all} (flatpak) {pacman} (package manager)"            
+        },
+        {
+            "type": "shell",
+            "key": " ",
+            "format": "{#yellow}└ 󰞷 {#}  {exe-name} {version} (shell)"            
+        },
+        "break",
+        {
+            "type": "custom",
+            "format": "{#1;blue}󰧨  DE{#}"
+        },
+        {
+			"type": "custom",
+			"format": "{#blue}┌────────────────────────────── ─ ─ ─ - - ┄ ┄{#}"
+        },
+        {
+            "type": "lm",
+            "key": " ",
+            "format": "{#blue}│ 󰍁 {#} {#1;blue}LM{#} {service>14}"
+        },
+        {
+            "type": "wm",
+            "key": " ",
+            "format": "{#blue}│ 󱂬{#}  {#1;blue}WM{#} {pretty-name>11}"
+        },
+        {
+            "type": "terminal",
+            "key": " ",
+            "format": "{#blue}└ 󰆍 {#} {#1;blue}Terminal{#} {pretty-name>10}"
+        },
+        "break",
+        {
+			"type": "custom",
+			"format": "{#1;magenta}  Uptime / Datetime{#}"
+        },
+        {
+            "type": "custom",
+			"format": "{#magenta}┌────────────────────────────── ─ ─ ─ - - ┄ ┄{#}"
+        },
+        {
+            "type": "uptime",
+            "key": " ",
+            "format": "{#1;magenta}│ Uptime{#}       {formatted}"
+        },
+        {
+            "type": "datetime",
+            "key": " ",
+            "format": "{#1;magenta}└ Datetime{#} {day-pretty>6}/{month-pretty}/{year}"
+        },
+        "break",
+        {
+            "type": "custom",
+            "format": "\u001b[90m┄ ┄ - - ─ ─ ─ ──────────────── ─ ─ ─ - - ┄ ┄"
+        },
+        {
+            "type": "colors",
+            "paddingLeft": 0,
+            "symbol": "square",
+        }
+    ]
+}
+

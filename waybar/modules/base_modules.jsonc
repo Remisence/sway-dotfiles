@@ -126,7 +126,7 @@
     },
     
     "memory": {
-        "format": "<span font-family='Symbols Nerd Font' rise='0' font='18px'></span> {used}/{total} GB",
+        "format": "<span font-family='Symbols Nerd Font' rise='0' font='18px'></span> {used:4.2f}/{total} GB",
         "tooltip": false,
         "on-click": "alacritty -e btop",
     },

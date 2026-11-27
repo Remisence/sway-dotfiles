@@ -159,6 +159,8 @@ bindsym --locked XF86AudioNext exec playerctl next
 
 # Special key to take a screenshot with grim
 bindsym Print exec grim -g "$(slurp -c ff0000ff -b 00000085)" - | wl-copy
+bindsym ctrl+Print exec grim -g "$(slurp -c ff0000ff -b 00000085)" ~/Pictures/Screenshots/select-$(date +%Y%m%d-%H%M%S).png
+
 
 # Set split selection to none
 bindsym $mod+n split none
